@@ -18,6 +18,12 @@ public class Customer {
     public Customer() {
     }
 
+    public Customer(String mobile, String password, List<TripBooking> tripBookingList) {
+        this.mobile = mobile;
+        this.password = password;
+        this.tripBookingList = tripBookingList;
+    }
+
     public int getCustomerId() {
         return customerId;
     }

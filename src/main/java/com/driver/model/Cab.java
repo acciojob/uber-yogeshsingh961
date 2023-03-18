@@ -18,6 +18,13 @@ public class Cab{
     public Cab() {
     }
 
+    public Cab(int perKmRate, boolean available) {
+        this.perKmRate = perKmRate;
+        this.available = available;
+    }
+
+
+
     public int getId() {
         return id;
     }
