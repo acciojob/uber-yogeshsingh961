@@ -4,7 +4,6 @@ import javax.persistence.*;
 import com.driver.model.Driver;
 
 @Entity
-@Table(name = "cab")
 public class Cab{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

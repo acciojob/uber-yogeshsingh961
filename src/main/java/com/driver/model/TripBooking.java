@@ -6,7 +6,6 @@ import com.driver.model.TripStatus;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "trip_booking")
 public class TripBooking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
