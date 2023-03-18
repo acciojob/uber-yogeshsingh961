@@ -1,48 +1,29 @@
 package com.driver.model;
 
+import com.driver.model.Cab;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Driver{
+@Table(name = "driver")
+public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int driverId;
-    private String mobNo;
+    private String mobile;
     private String password;
+
+    //Assuming the driver is the parent entity wrt to cab
     @OneToOne(mappedBy = "driver",cascade = CascadeType.ALL)
-    Cab cab;
+    private Cab cab;
+
     @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
-    List<TripBooking> tripBookingList= new ArrayList<>();
-
-    public Driver(){
-
-    }
-
-    public Driver(int id, String mobNo, String password) {
-        this.driverId = id;
-        this.mobNo = mobNo;
-        this.password = password;
-    }
+    private List<TripBooking> tripBookingList = new ArrayList<>();
 
 
-
-
-    public String getMobNo() {
-        return mobNo;
-    }
-
-    public void setMobNo(String mobNo) {
-        this.mobNo = mobNo;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public Driver() {
     }
 
     public int getDriverId() {
@@ -53,6 +34,22 @@ public class Driver{
         this.driverId = driverId;
     }
 
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public Cab getCab() {
         return cab;
     }
@@ -60,4 +57,13 @@ public class Driver{
     public void setCab(Cab cab) {
         this.cab = cab;
     }
+
+    public List<TripBooking> getTripBookingList() {
+        return tripBookingList;
+    }
+
+    public void setTripBookingList(List<TripBooking> tripBookingList) {
+        this.tripBookingList = tripBookingList;
+    }
+
 }
