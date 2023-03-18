@@ -16,7 +16,7 @@ import java.util.List;
 @RequestMapping("/admin")
 public class AdminController {
 	@Autowired
-	AdminServiceImpl adminService;
+	AdminService adminService;
 
 
 	@PostMapping("/register")
